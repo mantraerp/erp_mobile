@@ -6,7 +6,7 @@ app_email = "ravi.patel@mantratec.com"
 app_license = "mit"
 
 # Apps
-# ------------------
+# -------------------
 
 # required_apps = []
 
