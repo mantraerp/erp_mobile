@@ -23,9 +23,14 @@ def login(user,pwd):
 			reply['status_code'] = 200
 		else:
 			login_manager.post_login()
+			screens  =  frappe.get_all("Mobile Screen Allow",filters={"user":"ravi.patel@mantratec.com"},pluck="mobile_screen")
+			titles=[]
+			for s in screens:
+				titles.append(frappe.get_value("Mobile Screen",s,"display_title"))
 			reply['message']='Logged In sucessfully'
 			frappe.local.response['sid'] = frappe.session.sid
 			frappe.local.response['max_age'] = get_expiry_in_seconds()
+			frappe.local.response["allowed_screens"] = titles
 			frappe.local.response["http_status_code"] = 200
 			reply['status_code'] = 200
 
@@ -62,6 +67,7 @@ def verify_code(user,pwd,otp,tmp_id):
 		reply['message']='Logged In successfully'
 		frappe.local.response['sid'] = frappe.session.sid
 		frappe.local.response['max_age'] = get_expiry_in_seconds()
+		frappe.local.response["allowed_screens"] = frappe.get_all("Mobile Screen Allow",filters={"user":user},pluck="mobile_screen")
 		frappe.local.response["http_status_code"] = 200
 		reply['status_code'] = 200
 
