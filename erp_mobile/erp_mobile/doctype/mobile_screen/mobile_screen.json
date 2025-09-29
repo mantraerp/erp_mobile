@@ -22,13 +22,14 @@
    "fieldname": "display_title",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Display Title"
+   "label": "Display Title",
+   "translatable": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-29 11:00:38.521338",
+ "modified": "2025-09-29 11:28:09.526681",
  "modified_by": "Administrator",
  "module": "ERP Mobile",
  "name": "Mobile Screen",
