@@ -7,7 +7,7 @@ from frappe.twofactor import ( # type: ignore
 from frappe.sessions import get_expiry_in_seconds # type: ignore
 from frappe.auth import LoginManager # type: ignore
 
-@frappe.whitelist(methods='POST', allow_guest=True)
+@frappe.whitelist(methods=['POST'], allow_guest=True)
 def login(user,pwd):
 	reply = {}
 	reply['message']=''
